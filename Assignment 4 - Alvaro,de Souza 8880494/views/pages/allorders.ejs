@@ -1,0 +1,59 @@
+<head>
+    <%- include ("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>All Orders</h1>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Postal Code</th>
+                    <th>Province</th>
+                    <th>Phone Number</th>
+                    <th>Product 1</th>
+                    <th>Product 2</th>
+                    <th>Product 3</th>
+                    <th>Delivery Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let order of orders ) { %>
+                <tr>
+                    <td><%= order.fullname %></td>
+                    <td><%= order.email %></td>
+                    <td><%= order.address %></td>
+                    <td><%= order.city %></td>
+                    <td><%= order.postalCode %></td>
+                    <td><%= order.province %></td>
+                    <td><%= order.phoneNumber %></td>
+                    <td>$<%= order.productOne%></td>
+                    <td>$<%= order.productTwo %></td>
+                    <td>$<%= order.productThree %></td>
+                    <td><%= order.deliveryTime %></td>
+                    <td>
+                        <a class="btn btn-primary" role="button"
+                            href="/order/<%= order._id %>">
+                            View
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" role="button"
+                            href="/delete/<%= order._id %>">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <%- include("../shared/footer.ejs") %>
+    </div>
+    <%- include("../shared/scripts.ejs") %>
+</body>

@@ -1,0 +1,62 @@
+<head>
+    <%- include ("../shared/head") %>
+ </head>
+ <body>
+    <div class="container">
+       <h1>View Orders</h1>
+       <p><a href="/orders" class="link-primary">View Orders</a></p>
+ 
+       <table class="table table-striped">
+          <tbody>
+             <tr>
+                <td>Name:</td>
+                <td><%= order.fullname %></td>
+             </tr>
+             <tr>
+                <td>Email:</td>
+                <td><%= order.email %></td>
+             </tr>
+             <tr>
+                <td>Address:</td>
+                <td><%= order.address %></td>
+             </tr>
+             <tr>
+                <td>Phone Number:</td>
+                <td><%= order.phoneNumber %></td>
+             </tr>
+             <tr>
+                <td>City:</td>
+                <td><%= order.city %></td>
+             </tr>
+             <tr>
+                <td>Postal Code:</td>
+                <td><%= order.postalCode %></td>
+             </tr>
+             <tr>
+                <td>Province:</td>
+                <td><%= order.province %></td>
+             </tr>
+             <tr>
+                <td>Product 1:</td>
+                <td>$<%= order.productOne%></td>
+             </tr>
+             <tr>
+                <td>Product 2:</td>
+                <td>$<%= order.productTwo %></td>
+             </tr>
+             <tr>
+                <td>Product 3:</td>
+                <td>$<%= order.productThree %></td>
+             </tr>
+             <tr>
+                <td>Delivery Time:</td>
+                <td><%= order.deliveryTime %></td>
+             </tr>
+          </tbody>
+       </table>
+ 
+       <%- include("../shared/footer.ejs") %>
+    </div>
+    <%- include("../shared/scripts.ejs") %>
+ </body>
+ 

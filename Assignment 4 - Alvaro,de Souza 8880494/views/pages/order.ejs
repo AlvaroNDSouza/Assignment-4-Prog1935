@@ -1,0 +1,100 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>MyShop</h1>
+
+        <% if(typeof errors !== "undefined") { for (let error of errors) { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Whoops.</strong><span><%= error.msg %></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        <% } } %>
+
+        <form method="post" action="/">
+            <!-- Full name -->
+            <div class="mb-3">
+                <label class="formm-label" for="fullname">Name*:</label>
+                <input class="form-control" type="text" name="fullname" />
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="formm-label" for="email">Email*:</label>
+                <input class="form-control" type="text" name="email" placeholder="email@domain.com" />
+            </div>
+            <!-- Phone Number -->
+            <div class="mb-3">
+                <label class="form-label" for="phoneNumber">Phone Number</label>
+                <input class="form-control" type="text" name="phoneNumber" placeholder="555-555-5555" />
+            </div>
+            <!-- Address -->
+            <div class="mb-3">
+                <label class="form-label" for="address">Address*:</label>
+                <input class="form-control" type="text" name="address" />
+            </div>
+            <!-- City -->
+            <div class="mb-3">
+                <label class="formm-label" for="city">City*:</label>
+                <input class="form-control" type="text" name="city" />
+            </div>
+            <!-- Postal Code-->
+            <div class="mb-3">
+                <label class="formm-label" for="postalCode">Postal Code*:</label>
+                <input class="form-control" type="text" name="postalCode" placeholder="X9X 9X9" />
+            </div>
+            <!-- Provinces -->
+            <div class="mb-3">
+                <label class="form-label" for="province">Province*:</label>
+                <select class="form-control" name="province">
+                    <option value="">Please select</option>
+
+                    <option value="Ontario">Ontario</option>
+                    <option value="Alberta">Alberta</option>
+                    <option value="British Columbia">British Columbia</option>
+                    <option value="Manitoba">Manitoba</option>
+                    <option value="Quebec">Quebec</option>
+                    <option value="Prince Edward Island">Prince Edward Island</option>
+                    <option value="Saskatchewan">Saskatchewan</option>
+                    <option value="Yukon">Yukon</option>
+                    <option value="New Brunswick">New Brunswick</option>
+                    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                    <option value="Northwest Territories">Northwest Territories</option>
+                    <option value="Nova Scotia">Nova Scotia</option>
+                    <option value="Nunavut">Nunavut</option>
+
+                </select>
+                <!--Product 1 -->
+                <div class="mb-3">
+                    <label class="formm-label" for="product1">Product 1 (CA$:3):</label>
+                    <input class="form-control" type="text" name="product1" />
+                </div>
+                <!--Product 2 -->
+                <div class="mb-3">
+                    <label class="formm-label" for="product2">Product 2(CA$:5):</label>
+                    <input class="form-control" type="text" name="product2" />
+                </div>
+                <!--Product 3 -->
+                <div class="mb-3">
+                    <label class="formm-label" for="product3">Product 3 (CA$:10):</label>
+                    <input class="form-control" type="text" name="product3" />
+                </div>
+                
+
+                <!-- Delivery Time -->
+                <div class="mb-3">
+                    <label class="form-label" for="deliveryTime">Delivery Time</label>
+                    <select class="form-control" name="deliveryTime">
+                        <option value="1 Day">1 Day</option>
+                        <option value="3 Days">3 Days</option>
+                        <option value="5 Days">5 Days</option>
+                    </select>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Place Order">
+        </form>
+
+        <%- include("../shared/footer") %>
+    </div>
+
+    <%- include("../shared/scripts") %>
+</body>
